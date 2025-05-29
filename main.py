@@ -1,0 +1,1 @@
+print("Welcome on Guess The Number game")
