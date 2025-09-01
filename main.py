@@ -5,12 +5,28 @@ def main():
     print("====GUESS THE NUMBER====") 
     print("====Halo, ini kontribusi pertama saya====") 
 
-    low_num = 1 
-    high_num = 100 
+    # pilih level
+    print("pilih level kesulitan:")
+    print("1. Easy (1-50)")
+    print("2. Medium (1-100)")
+    print("3. Hard (1-500)")
+
+    level = input("Masukan pilihan (1/2/3): ")
+
+    if level == "1":
+        low_num, high_num = 1, 50
+    elif level == "2":
+        low_num, high_num = 1, 100
+    elif level == "3":
+        low_num, high_num = 1, 500
+    else:
+        print("input salah, default ke medium (1-100).")
+        low_num, high_num = 1, 100
+
     print(f"Select a number between {low_num} and {high_num}") 
 
     attempt = 0 
-    secret_guess = random.randint(1, 100) 
+    secret_guess = random.randint(low_num, high_num) 
     is_running = True 
 
     while is_running: 
@@ -32,7 +48,7 @@ def main():
             continue 
 
         print(f"Correct, the number is {secret_guess}") 
-        print("Attempt: ", attempt) 
+        print("Total Attempt: ", attempt) 
         is_running = False 
 
 
